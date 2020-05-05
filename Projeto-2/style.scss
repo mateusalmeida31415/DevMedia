@@ -1,0 +1,87 @@
+@mixin flexProp() {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+   
+}
+
+@mixin  align() {
+    justify-content: center;
+    align-items: center;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+   
+}
+
+body{
+    font-family: arial;
+    font-size: 0px;
+    color: white;
+    text-transform: uppercase;
+}
+.block{
+    @include flexProp();
+    width: 100vw;
+    height: 100vh;
+   
+    .block-img.item1{
+        @include flexProp( );
+        @include align();
+        flex-grow: 1;
+        background-image: url("img/item1.png");
+        background-size: cover;
+        background-position: center;
+        
+    }
+    .block-img.item2{
+        @include flexProp( );
+        @include align();
+        flex-grow: 1;
+        background-image: url("img/item2.png");
+        background-size: cover;
+        background-position: center;
+     }
+     .block-img.item3{
+        @include flexProp( );
+        @include align();
+        flex-grow: 1;
+        background-image: url("img/item3.png");
+        background-size: cover;
+        background-position: center;
+     }
+     .block-img.item4{
+        @include flexProp( );
+        @include align();
+        flex-grow: 1;
+        background-image: url("img/item4.png");
+        background-size: cover;
+        background-position: center;
+     }
+     .block-text{
+         //visibility: hidden;
+         transition: all 1s ease-in-out;
+     }
+     
+    .block-img{
+        filter: grayscale(1);
+        transition: flex-grow 1s, filter 1s;
+
+    }
+    .block-img:hover .block-text{
+        //visibility: visible;
+        font-size: 22pt;
+        text-shadow: 1px 1px 5px rgba(black, 0.3)
+    }
+    .block-img:hover{
+        flex-grow: 10;
+        filter: none;
+    }
+    
+
+            
+}
+
