@@ -123,8 +123,8 @@ body {
 }
 
 .block .block-text {
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
 }
 
 .block .block-img {
@@ -147,5 +147,14 @@ body {
           flex-grow: 10;
   -webkit-filter: none;
           filter: none;
+}
+
+@media (max-width: 768px) {
+  .block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 /*# sourceMappingURL=style.css.map */

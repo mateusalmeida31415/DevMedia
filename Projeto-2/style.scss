@@ -63,7 +63,7 @@ body{
      }
      .block-text{
          //visibility: hidden;
-         transition: all 1s ease-in-out;
+         transition: all 0.7s ease-in-out;
      }
      
     .block-img{
@@ -80,8 +80,11 @@ body{
         flex-grow: 10;
         filter: none;
     }
-    
-
             
+}
+@media (max-width: 768px){
+    .block{
+        flex-direction: column;
+    }
 }
 
