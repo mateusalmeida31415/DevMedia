@@ -38,8 +38,8 @@ main .block {
           flex-direction: column;
   -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
           box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-  height: 350px;
-  width: 300px;
+  max-height: 100vh;
+  max-width: 100vw;
   border-top: 10px solid green;
 }
 
@@ -67,7 +67,7 @@ main .block-form input, main .block-form label {
   border-radius: 3px;
 }
 
-main .block-form #login, main .block-form #senha {
+main .block-form #login, main .block-form #senha, main .block-form #email {
   background-color: rgba(211, 211, 211, 0.5);
   border: none;
 }
@@ -81,6 +81,7 @@ main .block-form #btn {
 main .block-form label {
   font-weight: bold;
   font-size: 20pt;
+  padding: 20px;
 }
 
 main .block-foot {
@@ -93,9 +94,10 @@ main .block-foot a {
   font-weight: bold;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
   .block {
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -18,8 +18,8 @@ main{
     .block{
         @include flexAlign(column);
         box-shadow: 1px 1px 5px rgba($color: #000000, $alpha: 0.5);
-        height: 350px;
-        width: 300px;
+        max-height: 100vh;
+        max-width: 100vw;
         border-top: 10px solid green;
         &-form{
             @include flexAlign(column);
@@ -33,7 +33,7 @@ main{
                 font-size: 15pt;
                 border-radius: 3px;
             }
-            #login, #senha{
+            #login, #senha, #email{
                 background-color: rgba(lightgray, 0.5);
                 border: none;
             
@@ -46,6 +46,7 @@ main{
             label{
                 font-weight: bold;
                 font-size: 20pt;
+                padding: 20px;
             }
         }
         &-foot{
@@ -59,9 +60,9 @@ main{
         
     }
 }
-@media (max-width: 450px){
+@media (max-width: 480px){
     .block{
-        width: 100%;
-        
+       width: 100vw;
+       height: 100vh;
     }
 }
