@@ -1,0 +1,100 @@
+@mixin flex($direction:row) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin config{
+    height: 50px;
+    font-size: 50px;
+    text-transform: uppercase;
+    //overflow: hidden;
+    margin-top: 70px;
+    font-weight: bold;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+li{
+    list-style-type: none;
+    color: #733e31;
+}
+
+p{
+    margin-right: 15px;
+    color: white;
+}
+
+.background{
+    width: 100vw;
+    height: 100vh;
+    background-color:  #ffb74e;
+    @include flex();
+    .hidden-words{
+        @include flex(column);
+        .infinite-words{
+            @include flex();
+            @include config();
+            overflow: hidden;
+            li{
+               animation: moveup 8s linear infinite;
+               
+            }
+        }
+        .hover-words{
+            @include flex();
+            @include config();
+        }
+        
+        .click-words{
+            @include flex();
+            @include config();
+        }
+        
+    }
+
+}
+
+@keyframes moveup{
+    0%{
+        transform: translate(0px, 210px);
+    }
+    10%{
+        transform: translate(0px, 150px);
+    }
+    20%{
+        transform: translate(0px, 150px);
+    }
+
+    30%{
+        transform: translate(0px, 90px);
+    }
+
+    40%{
+        transform: translate(0px, 90px);
+    }
+
+    50%{
+        transform: translate(0px, 30px);
+    }
+
+    60%{
+        transform: translate(0px, 30px);
+    }
+
+    70%{
+        transform: translate(0px, -30px);
+    }
+
+    100%{
+        transform: translate(0px, -30px);
+    }
+
+    
+
+}
