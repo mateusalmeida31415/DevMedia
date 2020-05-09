@@ -1,17 +1,18 @@
-@mixin flex($direction:row) {
+@mixin flex($direction:row, $align:center) {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: $align;
     flex-direction: $direction;
 }
 
 @mixin config{
-    height: 50px;
+    height: 60px;
     font-size: 50px;
     text-transform: uppercase;
     //overflow: hidden;
     margin-top: 70px;
     font-weight: bold;
+    overflow: hidden;
 }
 
 *{
@@ -36,24 +37,40 @@ p{
     background-color:  #ffb74e;
     @include flex();
     .hidden-words{
-        @include flex(column);
+        @include flex(column, flex-start);
         .infinite-words{
             @include flex();
             @include config();
-            overflow: hidden;
+           
             li{
                animation: moveup 8s linear infinite;
+              
                
             }
         }
         .hover-words{
             @include flex();
             @include config();
+            
+            li{
+                transform: translate(0px, 60px);
+            }
+            &:hover li{
+                animation: moveupandslide 2s linear 0s forwards;
+                
+            }
+           
         }
         
         .click-words{
             @include flex();
             @include config();
+            li{
+                position: relative;
+            }
+            &:active li{
+                animation: zoom 1s linear;
+            }
         }
         
     }
@@ -91,10 +108,30 @@ p{
         transform: translate(0px, -30px);
     }
 
-    100%{
+    80%{
         transform: translate(0px, -30px);
+    }
+
+    90%{
+        transform: translate(0px, -90px);
+    }
+
+    100%{
+        transform: translate(0px, -90px);
     }
 
     
 
+}
+
+@keyframes moveupandslide{
+    50%{transform: translate(0px, 0px);}
+    75%{transform: translate(0px, 0px);}
+    100%{transform: translate(200px, 0px);}
+}
+
+@keyframes zoom{
+    100%{
+        font-size: 90px;
+    }
 }
